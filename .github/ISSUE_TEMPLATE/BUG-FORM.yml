@@ -1,62 +1,58 @@
 name: Bug Report
-description: File a bug report
+description: Помогите нам сделать библиотеку более стабильной
 title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+labels: ["type:bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
+        Спасибо за то, что помогаете нам стать лучше!
   - type: textarea
     id: what-happened
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: Описание
+      description: Дайте как можно более полное описание проблемы.
+      placeholder: Пару строк о случившемся...
     validations:
       required: true
-  - type: dropdown
+  - type: input
     id: version
     attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+      label: Версия
+      description: Поможет локализовать проблему.
     validations:
       required: true
   - type: dropdown
     id: browsers
     attributes:
-      label: What browsers are you seeing the problem on?
+      label: В каких браузерах воспроизводится проблема?
       multiple: true
       options:
         - Firefox
         - Chrome
         - Safari
         - Microsoft Edge
+        - Yandex Browser
+        - Другое (укажите в описании)
   - type: textarea
-    id: logs
+    id: steps
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      label: Шаги воспроизведения
+      description: Желательно описать последовательность, при которой ошибка стабильно воспроизводится.
+  - type: textarea
+    id: expectations
+    attributes:
+      label: Ожидаемое поведение
+      description: Если считаете, что из описания ожидаемое поведение непонятно.
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Скриншоты
+      description: Прикрепите скриншоты, если есть такая возможность.
+  - type: textarea
+    id: reproduce-example
+    attributes:
+      label: Пример с воспроизведением
+      description: Можно сделать форк отсюда https://codesandbox.io/s/vkui-boilerplate-oj149 и приложить ссылку. Сильно ускоряет поиск причин проблемы.
       render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      
